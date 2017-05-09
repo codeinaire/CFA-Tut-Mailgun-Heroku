@@ -17,7 +17,7 @@ We'll take each in turn.
 This is pretty straight forward and is almost exactly the same as what you did to configure your RoR app to run Mailgun in production environment. If you followed the above powerpoint you'd have the following in `config/environments/development.rb`:
 
  `config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }`  \n
-  `config.action_mailer.delivery_method = :smtp`  \n
+ `config.action_mailer.delivery_method = :smtp`  \n
   config.action_mailer.smtp_settings = {  \n
   address:              "smtp.mailgun.org",
   port:                     587,
