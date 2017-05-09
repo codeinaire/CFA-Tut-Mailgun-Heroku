@@ -28,12 +28,12 @@ This is pretty straight forward and is almost exactly the same as what you did t
 
 To configure for deployment to Heroku go into `config/environments/production.rb` and copy the following code:
 
-  `config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              ENV["MAILGUN_SMTP_SERVER"],
-    user_name:            ENV["MAILGUN_SMTP_LOGIN"],
-    password:             ENV["MAILGUN_SMTP_PASSWORD"],
-    domain:               "johnstewartportfolio.herokuapp.com/",
+  `config.action_mailer.delivery_method = :smtp  
+   config.action_mailer.smtp_settings = {  
+    address:              ENV["MAILGUN_SMTP_SERVER"],  
+    user_name:            ENV["MAILGUN_SMTP_LOGIN"],  
+    password:             ENV["MAILGUN_SMTP_PASSWORD"],  
+    domain:               "johnstewartportfolio.herokuapp.com/",  
     authentication:       'plain'  }`
 
 Once this code is in your production file you will be able to deploy to Heroku. Next we will go into what needs to be configured in Heroku for these ENV\`s to be of use. Ofcourse, push to github and then push that to Heroku.
