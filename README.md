@@ -14,7 +14,7 @@ We'll take each in turn.
 
 ## RoR configuration
 
-This is pretty straight forward and is almost exactly the same as what you did to configure your RoR app to run Mailgun in production environment. If you followed the above powerpoint you'd have the following in `config/environments/development.rb`:
+This is pretty straight forward and is almost exactly the same as what you did to configure your RoR app to run Mailgun in production environment. If you followed the above powerpoint you'd have something that looks like the following in `config/environments/development.rb`. The name of the ENV may be different, but it'd be very similar to this:
 
  `config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }`  
  `config.action_mailer.delivery_method = :smtp`  
@@ -48,11 +48,11 @@ Once your RoR app has been deployed to Heroku, login into Heroku and go to the "
 
 Click "Reveal Config Vars" and your environmental variables will be revealed. Here is an image of what I have as my environmental variables for Mailgun, ofcourse your environmental variables will be different:
 
-![alt tag]()
+![alt tag](https://github.com/codeinaire/CFA-Tut-Mailgun-Heroku/blob/master/images/heroku.png)
 
 To find the values to use for these environmental variables log into your Mailgun account. If you have yet to create a domain for your Heroku app do that now by clicking on "Domains" and "Add New Domain". Name it after the address of your Heroku app. Once you have a domain you want go back to the "Domains" section and click on the domain you want to use for your Heroku app. Here is a photo of the information that you are looking for:
 
-![alt tag]()
+![alt tag](https://github.com/codeinaire/CFA-Tut-Mailgun-Heroku/blob/master/images/mailgun.png)
 
 I've blocked my information, but you'll see a bunch of values next to the titles. This part can be slightly confusing because there isn't a direct correlation between the titles in here and the name of the environmental variables you'll be putting into Heroku. Below I've put what to name the Heroku config vars and what Mailgun value you need to put in for it:
 
@@ -70,9 +70,9 @@ This is all you need to do in Heroku to config the env vars for Mailgun. There w
 
 From what I understand the only configuration you need to do for Mailgun is to make sure your email address is authorised. If I remember correctly this is something that was done when you sign-up to Mailgun. If it wasn't then click on "Domains" then "Authorized Recipients"  then "Invite New Recipient". There are a few steps you need to take to confirm your authorization.
 
-Another issue that I thought would stop me from using my Mailgun account was the DNS configuration. Here is the warning for this:
+Another issue that I thought would stop me from using my Mailgun account was the DNS configuration. You'll also see that your domain is "Unverified" when you click into that domain. Here is the warning for this in the domains screen:
 
-![alt tag]()
+![alt tag](https://github.com/codeinaire/CFA-Tut-Mailgun-Heroku/blob/master/images/mailgun_dns.png)
 
 I don't know why i'm told "Unverified domains can not receive email", yet I'm still getting emails. However, if you want to have a different email address receiving the emails other than the email you used to set up the account you will have to config the DNS. Otherwise emails from your Heroku app will only be sent to your email address you used to sign up for. In this case that doesn't matter. However, for future apps it may be problemmatic.
 
